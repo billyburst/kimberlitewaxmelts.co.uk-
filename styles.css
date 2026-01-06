@@ -325,6 +325,61 @@ a {
 }
 
 /* ============================================
+   METADATA BOX
+   ============================================ */
+
+.metadata-box {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    margin-top: calc(var(--spacing-xl) * -1);
+    position: relative;
+    z-index: 10;
+}
+
+.metadata-content {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    border-left: 4px solid var(--primary);
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.metadata-label {
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.metadata-value {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .metadata-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .metadata-box {
+        margin-top: calc(var(--spacing-md) * -1);
+    }
+}
+
+/* ============================================
    CONTAINER & SECTIONS
    ============================================ */
 
