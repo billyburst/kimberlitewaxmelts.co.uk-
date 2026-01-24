@@ -427,7 +427,248 @@ a {
 }
 
 /* ============================================
-   CASINO CARDS
+   CASINO COMPARISON TABLE
+   ============================================ */
+
+.casino-comparison-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: var(--spacing-xl);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.casino-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.casino-comparison-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.casino-comparison-table thead th {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.casino-comparison-table tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.casino-comparison-table tbody tr:hover {
+    background: linear-gradient(90deg, #f7fafc 0%, #edf2f7 100%);
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.casino-comparison-table tbody tr.featured-row {
+    background: linear-gradient(90deg, #fff5f5 0%, #fffaf0 100%);
+}
+
+.casino-comparison-table tbody tr.featured-row:hover {
+    background: linear-gradient(90deg, #fed7d7 0%, #feebc8 100%);
+}
+
+.casino-comparison-table tbody td {
+    padding: 1.2rem 1rem;
+    vertical-align: middle;
+}
+
+.casino-name-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.casino-name-cell strong {
+    font-size: 1.1rem;
+    color: var(--dark);
+    font-weight: 800;
+}
+
+.table-badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.table-badge.hot {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.table-badge.new {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.table-badge.verified {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    color: white;
+}
+
+.table-badge.mega {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+}
+
+.table-badge.bonus {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    color: white;
+}
+
+.table-badge.premium {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+}
+
+.table-badge.instant {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    color: #333;
+}
+
+.casino-comparison-table code {
+    background: #edf2f7;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-md);
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: var(--primary);
+    border: 2px dashed var(--primary);
+    font-size: 0.9rem;
+}
+
+.no-code {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.type-badge.no-deposit {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+}
+
+.type-badge.deposit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.table-claim-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    font-weight: 700;
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-md);
+    white-space: nowrap;
+}
+
+.table-claim-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Responsive table for mobile */
+@media screen and (max-width: 768px) {
+    .casino-comparison-table thead {
+        display: none;
+    }
+
+    .casino-comparison-table tbody tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border: 2px solid #e2e8f0;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+    }
+
+    .casino-comparison-table tbody tr:hover {
+        transform: none;
+    }
+
+    .casino-comparison-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        text-align: right;
+    }
+
+    .casino-comparison-table tbody td:last-child {
+        border-bottom: none;
+        justify-content: center;
+    }
+
+    .casino-comparison-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: var(--text-light);
+        letter-spacing: 0.5px;
+    }
+
+    .casino-comparison-table tbody td:first-child {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+
+    .casino-comparison-table tbody td:first-child::before {
+        color: white;
+    }
+
+    .casino-name-cell {
+        align-items: flex-end;
+    }
+
+    .casino-name-cell strong {
+        color: white;
+    }
+
+    .table-claim-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   CASINO CARDS (LEGACY - KEEPING FOR COMPATIBILITY)
    ============================================ */
 
 .casino-grid {
